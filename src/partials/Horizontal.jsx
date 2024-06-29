@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import noimg from "../../public/noimage.png"
 
 const Horizontal = ({ data }) => {
   return (
@@ -13,9 +14,9 @@ const Horizontal = ({ data }) => {
             <img
               className="w-full h-[50%] object-cover
             "
-              src={`https://image.tmdb.org/t/p/w500${
-                d.backdrop_path || d.poster_path
-              })`}
+              src={d.backdrop_path || d.poster_path ? `https://image.tmdb.org/t/p/w500${
+                d.backdrop_path || d.poster_path ||d.profile_path
+              }` : noimg}
               alt=""
             />
             <h1 className="text-md font-semibold text-zinc-400 leading-[18px] my-2">

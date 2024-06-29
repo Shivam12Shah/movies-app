@@ -1,6 +1,7 @@
 import React from "react";
 import Loading from "../Components/Loading";
 import { Link } from "react-router-dom";
+import noimg from '../../public/noimage.png'
 
 const Cards = ({ data,title }) => {
   console.log(title);
@@ -12,9 +13,9 @@ const Cards = ({ data,title }) => {
         data.map((movie, index) => (
           <Link to={`/${movie.media_type || title}/details/${movie.id}`} key={index} className="w-[200px] relative">
             <img
-              src={`https://image.tmdb.org/t/p/w185/${
+              src={ movie.poster_path || movie.profile_path ? `https://image.tmdb.org/t/p/w185/${
                 movie.poster_path || movie.profile_path
-              }`}
+              }` :noimg}
               alt={movie.title}
             />
             <h3 className="font-semibold">{movie.title || movie.name}</h3>

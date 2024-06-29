@@ -43,7 +43,7 @@ const Home = () => {
   },[Getcategory])
   console.log(trending);
   return trending && wallpaper ? (
-    <>
+    <div className="flex">
       <Sidenav />
       <div className="sidebar w-[80%] h-full px-10 overflow-y-auto pb-5">
         <Topnav/>
@@ -54,7 +54,7 @@ const Home = () => {
       </div>
         <Horizontal data={trending} title={Getcategory} />
       </div>
-    </>
+    </div>
   ): <Loading/>
 };
 

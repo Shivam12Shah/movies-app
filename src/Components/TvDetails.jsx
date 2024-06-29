@@ -168,7 +168,7 @@ const TvDetails = () => {
       />
 
       <h1 className="text-2xl font-semibold text-white my-5">Sessions</h1>
-      <div className="w-full flex overflow-y-hidden mb-5 p-5 ">
+      <div className="w-full flex overflow-y-hidden mb-5 p-5  gap-4">
         {info.detail.seasons ? info.detail.seasons.map((s, i) => (
           <div className="flex flex-col">
             <img

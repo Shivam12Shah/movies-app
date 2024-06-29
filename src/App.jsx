@@ -15,7 +15,7 @@ import Notfound from "./Components/Notfound";
 
 const App = () => {
   return (
-    <div className="w-full h-screen bg-[#1F1E24] flex ">
+    <div className="w-full min-h-screen bg-[#1F1E24] ">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/trending" element={<Trending />} />

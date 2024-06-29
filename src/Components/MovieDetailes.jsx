@@ -138,7 +138,7 @@ const MovieDetailes = () => {
           </div>
         )}
       </div>
-      <hr className="my-5" />
+      <hr className="my-10" />
       <h1 className="text-2xl font-semibold text-white my-5">
         Recommendation & Similar Stuff
       </h1>
