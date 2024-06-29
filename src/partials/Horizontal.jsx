@@ -1,12 +1,9 @@
 import React from "react";
 
-const Horizontal = ({ data }) => {
+const Horizontal = ({ data ,func}) => {
   return (
-    <div className="w-full h-[41vh] ">
-      <div>
-        <h1 className="text-xl text-zinc-400 font-semibold my-4">Trending</h1>
-      </div>
-      <div className="div w-full h-[40vh] flex gap-2 overflow-x-auto">
+    <div className="w-full h-[41vh]">
+      <div className="div w-full h-[44vh] flex gap-2 overflow-x-auto ">
         {data.map((d, i) => (
           <div key={i} className="min-w-[200px] h-full  bg-zinc-900 p-2 rounded-md">
             <img className="w-full h-[50%] object-cover
