@@ -5,7 +5,7 @@ const Horizontal = ({ data }) => {
   return (
     <div className="w-full h-[41vh]">
       <div className="div w-full h-[44vh] flex gap-2 overflow-x-auto ">
-        {data.map((d, i) => (
+        {data.length > 0 ? data.map((d, i) => (
           <Link to={`/${d.media_type}/details/${d.id}`}
             key={i}
             className="min-w-[200px] h-full  bg-zinc-900 p-2 rounded-md"
@@ -26,7 +26,7 @@ const Horizontal = ({ data }) => {
               <span className="text-blue-500 text-sm">More</span>
             </p>
           </Link>
-        ))}
+        )) : <h1 className="text-3xl font-bold text-white">Nothing to Show</h1>}
       </div>
     </div>
   );
