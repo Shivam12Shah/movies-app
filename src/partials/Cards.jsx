@@ -2,14 +2,15 @@ import React from "react";
 import Loading from "../Components/Loading";
 import { Link } from "react-router-dom";
 
-const Cards = ({ data }) => {
+const Cards = ({ data,title }) => {
+  console.log(title);
   console.log(data);
 
   return data ? (
     <div className="flex flex-wrap text-white gap-3 justify-center bg-[#1F1E24] px-10 w-full h-full relative">
       {data &&
         data.map((movie, index) => (
-          <Link key={index} className="w-[200px] relative">
+          <Link to={`/${movie.media_type || title}/details/${movie.id}`} key={index} className="w-[200px] relative">
             <img
               src={`https://image.tmdb.org/t/p/w185/${
                 movie.poster_path || movie.profile_path

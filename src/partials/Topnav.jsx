@@ -23,26 +23,27 @@ const Topnav = () => {
   return (
     <div className="w-full relative ">
       <div className="top w-[60%] flex items-center py-2 gap-2 mx-auto px-2 ">
-        <i className="ri-search-2-line text-zinc-400 text-2xl"></i>
+        <i className="ri-search-2-line text-zinc-200 text-2xl"></i>
         <input
           onChange={(e) => setquery(e.target.value)}
           value={query}
-          className="w-[90%] text-xl px-3 py-1 outline-none bg-transparent text-zinc-400 "
+          className="w-[90%] text-xl px-3 py-1 outline-none bg-transparent text-zinc-200 "
           type="text"
           placeholder="Search Any Things"
         />
         {query.length > 0 && (
           <i
             onClick={() => setquery("")}
-            className="ri-close-fill text-zinc-400 text-2xl"
+            className="ri-close-fill text-zinc-200 text-2xl"
           ></i>
         )}
       </div>
       <div className="div w-[50%] max-h-[40vh] bg-zinc-900 bg-opacity-80  mx-auto absolute  left-1/2 -translate-x-1/2 overflow-auto">
         {serches ? serches.map((s, i) => (
           <Link
+          to={`/${s.media_type}/details/${s.id}`}
             key={i}
-            className="  w-full px-3 py-1 flex justify-start items-center gap-2 bg-slate-500 border-b-2 "
+            className="  w-full px-4 py-3 flex justify-start items-center gap-2 bg-slate-50  border-b-2 "
           >
             <div className="imgdiv w-[50px] h-[50px] ">
               <img className="w-full h-full object-cover" src={s.backdrop_path || s.profile_path ? `https://image.tmdb.org/t/p/w500${s.profile_path || s.backdrop_path || s.profile_path}`: noimage} alt="" />

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Header = ({ data }) => {
-
   return (
     <div
       style={{
@@ -14,18 +13,24 @@ const Header = ({ data }) => {
       }}
       className="w-full h-[50vh] flex flex-col justify-end text-white items-start p-10 rounded-md overflow-hidden"
     >
+      <h1 className="text-4xl font-bold">
+        {data.name || data.title || data.original_name || data.original_title}
+      </h1>
+      <Link to={`/${data.media_type}/details/${data.id}`} className="text-sm">{data.overview.slice(0, 200)} <span className="text-blue-600">more .....</span> </Link>
 
-        <h1 className="text-4xl font-bold">
-          {data.name || data.title || data.original_name || data.original_title}
-        </h1>
-        <p className="text-sm ">{data.overview}</p>
-
-       <div className="movieinfo flex gap-3 mt-2">
-       <p className="text-sm "><i className=" text-yellow-600 ri-megaphone-fill mr-2"></i>{data.release_date || "NO INFORMATION"}</p>
-        <p className="text-sm "><i className=" text-yellow-600 ri-album-fill mr-2"></i>{data.media_type.toUpperCase()}</p>
-       </div>
-        <Link className="bg-[#6556CD] text-sm px-3 py-1 rounded-sm mt-3">Watch Trailor</Link>
-     
+      <div className="movieinfo flex gap-3 mt-2">
+        <p className="text-sm ">
+          <i className=" text-yellow-600 ri-megaphone-fill mr-2"></i>
+          {data.release_date || "NO INFORMATION"}
+        </p>
+        <p className="text-sm ">
+          <i className=" text-yellow-600 ri-album-fill mr-2"></i>
+          {data.media_type.toUpperCase()}
+        </p>
+      </div>
+      <Link className="bg-[#6556CD] text-sm px-3 py-1 rounded-sm mt-3">
+        Watch Trailor
+      </Link>
     </div>
   );
 };

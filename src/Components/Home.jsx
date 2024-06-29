@@ -52,7 +52,7 @@ const Home = () => {
         <h1 className="text-xl text-zinc-400 font-semibold my-4">Trending</h1>
         <Dropdown func={e=>setGetcategory(e.target.value)} title="filter" option={["tv", "movie", "all"]}/>
       </div>
-        <Horizontal data={trending} />
+        <Horizontal data={trending} title={Getcategory} />
       </div>
     </>
   ): <Loading/>

@@ -30,7 +30,7 @@ const Sidenav = () => {
           <i className="mr-2 ri-tv-fill"></i>
           Tv Shows
         </Link>
-        <Link to={`/people`} className="hover:bg-[#6556CD] px-2 rounded-sm hover:text-white py-1">
+        <Link to={`/person`} className="hover:bg-[#6556CD] px-2 rounded-sm hover:text-white py-1">
           <i className="mr-2 ri-team-fill"></i>
           Peoples
         </Link>

@@ -52,7 +52,7 @@ const Trending = () => {
   return trending.length > 0 ? (
     <div className="w-screen">
       <div className="trending w-full flex items-center text-white h-[13vh] px-10">
-        <h1 className="text-xl flex font-semibold flex">
+        <h1 className="text-xl flex font-semibold">
           {" "}
           <i
             onClick={() => navigate(-1)}
@@ -81,7 +81,7 @@ const Trending = () => {
         hasMore={hasMore}
         loader={<h1>loading</h1>}
       >
-        <Cards data={trending} />
+        <Cards data={trending} title={category} />
       </InfiniteScroll>
     </div>
   ) : (
